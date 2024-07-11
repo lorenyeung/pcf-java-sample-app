@@ -1,7 +1,0 @@
----
-applications:
-- name: tasdemosvc
-  memory: 512M
-  path: ./target/spring-boot-0.0.2-SNAPSHOT.jar
-  env:
-    JAVA_OPTS: -javaagent:./appd/javaagent.jar

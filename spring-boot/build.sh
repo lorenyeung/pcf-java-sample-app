@@ -7,3 +7,4 @@ shasum target/spring-boot-$version.jar
 jar -uf target/spring-boot-$version.jar appd
 echo "sha after"
 shasum target/spring-boot-$version.jar
+#zip -r java-sample-app-$version.zip target/spring-boot-$version.jar appd

@@ -21,6 +21,17 @@ import com.example.springboot.LoggableException;
 public class Application {
 
 	public static void main(String[] args) {
+		String sleepTimeSecs = System.getenv("STARTUP_SLEEP");
+		int sleepTimeSecsInt= 0;
+		if (sleepTimeSecs != null) {
+			sleepTimeSecsInt= Integer.parseInt(sleepTimeSecs); 
+		} 
+		System.out.println("sleeping for" + sleepTimeSecs + " secs" );
+		try {
+			Thread.sleep(sleepTimeSecsInt*1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		SpringApplication.run(Application.class, args);
 
 
@@ -52,7 +63,6 @@ public class Application {
 			for (String beanName : beanNames) {
 				System.out.println(beanName);
 			}
-
 		};
 	}
 
